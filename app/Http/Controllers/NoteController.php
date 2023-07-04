@@ -80,9 +80,9 @@ class NoteController extends Controller
      * Display the specified resource.
      *
      * @param Note $note
-     * @return RedirectResponse
+     * @return RedirectResponse|View
      */
-    public function show(Note $note) : RedirectResponse
+    public function show(Note $note) : RedirectResponse|View
     {
         if (! $note->user->is(Auth::user())) {
             return abort(403, 'Access Denied');
@@ -269,9 +269,9 @@ class NoteController extends Controller
             $note->unArchive();
             $note->save();
 
-            return to_route('notes.index');
+            return to_route('notes.archived');
         }
 
-        return to_route('notes.index');
+        return to_route('notes.archived');
     }
 }
