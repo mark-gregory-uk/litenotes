@@ -1,11 +1,184 @@
 {
+  "_@kurkle-b1b89bbc.js": {
+    "file": "assets/@kurkle-b1b89bbc.js"
+  },
+  "_alpinejs-86abea30.js": {
+    "file": "assets/alpinejs-86abea30.js"
+  },
+  "_axios-bff3f665.js": {
+    "file": "assets/axios-bff3f665.js"
+  },
+  "_chart.js-63200d26.js": {
+    "file": "assets/chart.js-63200d26.js",
+    "imports": [
+      "_@kurkle-b1b89bbc.js"
+    ]
+  },
+  "_chartjs-adapter-moment-8cad19c9.js": {
+    "file": "assets/chartjs-adapter-moment-8cad19c9.js",
+    "imports": [
+      "_moment-fbc5633a.js",
+      "_chart.js-63200d26.js"
+    ]
+  },
+  "_color-name-9f831e71.js": {
+    "file": "assets/color-name-9f831e71.js"
+  },
+  "_cssesc-8188e13c.js": {
+    "file": "assets/cssesc-8188e13c.js"
+  },
+  "_flatpickr-a4e39586.js": {
+    "file": "assets/flatpickr-a4e39586.js"
+  },
+  "_lodash-0e451d9c.js": {
+    "file": "assets/lodash-0e451d9c.js",
+    "imports": [
+      "_color-name-9f831e71.js"
+    ]
+  },
+  "_moment-fbc5633a.js": {
+    "file": "assets/moment-fbc5633a.js"
+  },
+  "_picocolors-a61c35ba.js": {
+    "file": "assets/picocolors-a61c35ba.js"
+  },
+  "_tailwindcss-ab110c08.js": {
+    "file": "assets/tailwindcss-ab110c08.js",
+    "imports": [
+      "_picocolors-a61c35ba.js",
+      "_cssesc-8188e13c.js",
+      "_util-deprecate-e1af609a.js",
+      "_color-name-9f831e71.js"
+    ]
+  },
+  "_util-deprecate-e1af609a.js": {
+    "file": "assets/util-deprecate-e1af609a.js",
+    "imports": [
+      "_color-name-9f831e71.js"
+    ]
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf": {
+    "file": "assets/fa-brands-400-20c4a58b.ttf",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2": {
+    "file": "assets/fa-brands-400-74833209.woff2",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf": {
+    "file": "assets/fa-regular-400-528d022d.ttf",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2": {
+    "file": "assets/fa-regular-400-8e7e5ea1.woff2",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf": {
+    "file": "assets/fa-solid-900-67a65763.ttf",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2": {
+    "file": "assets/fa-solid-900-7152a693.woff2",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.ttf": {
+    "file": "assets/fa-v4compatibility-0515a423.ttf",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.ttf"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2": {
+    "file": "assets/fa-v4compatibility-694a17c3.woff2",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-258c40e3.css",
+    "file": "assets/app-f66f8281.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
+  "resources/images/404-illustration.svg": {
+    "file": "assets/404-illustration-a20d59b6.svg",
+    "src": "resources/images/404-illustration.svg"
+  },
+  "resources/images/auth-decoration.png": {
+    "file": "assets/auth-decoration-a3f89aec.png",
+    "src": "resources/images/auth-decoration.png"
+  },
+  "resources/images/auth-image.jpg": {
+    "file": "assets/auth-image-b4a9973b.jpg",
+    "src": "resources/images/auth-image.jpg"
+  },
+  "resources/images/icon-01.svg": {
+    "file": "assets/icon-01-e89d7385.svg",
+    "src": "resources/images/icon-01.svg"
+  },
+  "resources/images/icon-02.svg": {
+    "file": "assets/icon-02-d3838050.svg",
+    "src": "resources/images/icon-02.svg"
+  },
+  "resources/images/icon-03.svg": {
+    "file": "assets/icon-03-53e50533.svg",
+    "src": "resources/images/icon-03.svg"
+  },
+  "resources/images/programming_topics.jpg": {
+    "file": "assets/programming_topics-a79cce93.jpg",
+    "src": "resources/images/programming_topics.jpg"
+  },
+  "resources/images/user-36-01.jpg": {
+    "file": "assets/user-36-01-0b4055fb.jpg",
+    "src": "resources/images/user-36-01.jpg"
+  },
+  "resources/images/user-36-02.jpg": {
+    "file": "assets/user-36-02-4e6249f1.jpg",
+    "src": "resources/images/user-36-02.jpg"
+  },
+  "resources/images/user-36-03.jpg": {
+    "file": "assets/user-36-03-d6018667.jpg",
+    "src": "resources/images/user-36-03.jpg"
+  },
+  "resources/images/user-36-04.jpg": {
+    "file": "assets/user-36-04-5f36de09.jpg",
+    "src": "resources/images/user-36-04.jpg"
+  },
+  "resources/images/user-36-05.jpg": {
+    "file": "assets/user-36-05-ef727ca4.jpg",
+    "src": "resources/images/user-36-05.jpg"
+  },
+  "resources/images/user-36-06.jpg": {
+    "file": "assets/user-36-06-e2d3c0d1.jpg",
+    "src": "resources/images/user-36-06.jpg"
+  },
+  "resources/images/user-36-07.jpg": {
+    "file": "assets/user-36-07-39fa63fc.jpg",
+    "src": "resources/images/user-36-07.jpg"
+  },
+  "resources/images/user-36-08.jpg": {
+    "file": "assets/user-36-08-5a6300b0.jpg",
+    "src": "resources/images/user-36-08.jpg"
+  },
+  "resources/images/user-36-09.jpg": {
+    "file": "assets/user-36-09-b4e31b88.jpg",
+    "src": "resources/images/user-36-09.jpg"
+  },
+  "resources/images/user-avatar-32.png": {
+    "file": "assets/user-avatar-32-5af26a94.png",
+    "src": "resources/images/user-avatar-32.png"
+  },
   "resources/js/app.js": {
-    "file": "assets/app-9f9c98ef.js",
+    "file": "assets/app-aaded898.js",
+    "imports": [
+      "_lodash-0e451d9c.js",
+      "_axios-bff3f665.js",
+      "_alpinejs-86abea30.js",
+      "_chart.js-63200d26.js",
+      "_flatpickr-a4e39586.js",
+      "_tailwindcss-ab110c08.js",
+      "_chartjs-adapter-moment-8cad19c9.js",
+      "_color-name-9f831e71.js",
+      "_@kurkle-b1b89bbc.js",
+      "_picocolors-a61c35ba.js",
+      "_cssesc-8188e13c.js",
+      "_util-deprecate-e1af609a.js",
+      "_moment-fbc5633a.js"
+    ],
     "isEntry": true,
     "src": "resources/js/app.js"
   }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Note;
 use Carbon\Carbon;
 use Exception;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -14,11 +16,11 @@ use Illuminate\Support\Str;
 class NoteController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the all resource but not the archive.
      *
-     * @return Response
+     * @return View
      */
-    public function index()
+    public function index() : View
     {
         $notes = Note::withoutArchived()
             ->whereBelongsTo(Auth::user())
@@ -27,7 +29,11 @@ class NoteController extends Controller
         return view('pages.notes.index')->with('notes', $notes);
     }
 
-    public function archived()
+    /**
+     * Display the archive index
+     * @return View
+     */
+    public function archived() : View
     {
         $notes = Note::onlyArchived()
             ->whereBelongsTo(Auth::user())
@@ -39,9 +45,9 @@ class NoteController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return Factory|View
      */
-    public function create()
+    public function create() : View
     {
         return view('pages.notes.create');
     }
@@ -49,9 +55,9 @@ class NoteController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @return Response
+     * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(Request $request) : RedirectResponse
     {
         switch ($request->input('action')) {
             case 'save':
@@ -73,10 +79,10 @@ class NoteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return Response
+     * @param Note $note
+     * @return RedirectResponse
      */
-    public function show(Note $note)
+    public function show(Note $note) : RedirectResponse
     {
         if (! $note->user->is(Auth::user())) {
             return abort(403, 'Access Denied');
@@ -88,9 +94,10 @@ class NoteController extends Controller
     /**
      * Show Archived Note
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|never
+     * @param string $id
+     * @return View
      */
-    public function archivedShow(string $id)
+    public function archivedShow(string $id) : View
     {
         $note = Note::withArchived()->find($id);
         if ($note) {
@@ -101,13 +108,13 @@ class NoteController extends Controller
             return view('pages.notes.show')->with('note', $note);
         }
 
-        return abort(403, 'not Found');
+        return abort(403, 'error not Found');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @return Response
+     * @return Factory|\Illuminate\Contracts\Foundation\Application|View
      */
     public function edit(Note $note)
     {
@@ -121,9 +128,10 @@ class NoteController extends Controller
     /**
      * Edit an archived not
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|never
+     * @param string $id
+     * @return View
      */
-    public function editArchived(string $id)
+    public function editArchived(string $id) : View
     {
         $note = Note::withArchived()->find($id);
         if ($note) {
@@ -140,7 +148,7 @@ class NoteController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @return Response
+     * @return RedirectResponse
      */
     public function update(Request $request, Note $note)
     {
@@ -173,6 +181,12 @@ class NoteController extends Controller
         return to_route('notes.index');
     }
 
+    /**
+     * Update the archived note
+     * @param Request $request
+     * @param string $id
+     * @return RedirectResponse|never
+     */
     public function updateArchive(Request $request, string $id)
     {
         $note = Note::withArchived()->find($id);
@@ -207,9 +221,10 @@ class NoteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @return Response
+     * @param string $id
+     * @return RedirectResponse
      */
-    public function destroy(string $id)
+    public function destroy(string $id) : RedirectResponse
     {
         $note = Note::withArchived()->find($id);
         if ($note) {
