@@ -5,15 +5,16 @@ namespace App\Http\Controllers;
     use App\Models\DataFeed;
     use App\Models\Note;
     use Carbon\Carbon;
+    use Illuminate\Contracts\View\View;
 
     class DashboardController extends Controller
     {
         /**
          * Displays the dashboard screen
          *
-         * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+         * @return View
          */
-        public function index()
+        public function index() : View
         {
             $dataFeed = new DataFeed();
             $todaysNotes = Note::whereDate('updated_at',Carbon::today())
